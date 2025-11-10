@@ -78,7 +78,7 @@ Datasets:
 1. CIFAR-100: 50000 training, 10000 testing
 2. CIFAR-10: 50000 training, 10000 testing
 3. ImageNet: cancelled as downloading of imagenet dataset is not available
-4. Video: cancelled due to unknown source
+4. Video: 2 sample video (Test1.mp4, Test2.mp4)
 
 ## Description of each code
 ### 1. GoogLeNet_CIFAR10(changed layer).ipynb
