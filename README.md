@@ -127,6 +127,23 @@ This code takes the input size of 227x227 and only replace the last fully connec
 
 - Result: Good performance (see more detail in the code)
 
+### 9. AlexNet_Video.ipynb
+This code is same as other code for AlexNet, but used video as testing data. 
+
+There are 2 sample videos for testing: Test1.mp4, Test2.mp4. 
+
+The files, test1.csv and test2.csv, are required to run the test for Test1.mp4 and Test2.mp4 respectively.
+
+Some variables need to be changed depending on which test video you choose.
+- videoFile = "Test1.mp4" # Select video: "Test1.mp4", "Test2.mp4"
+- test = pd.read_csv('test1.csv') # Set 'test1.csv' for "Test1.mp4", 'test2.csv' for "Test2.mp4"
+- num_image = 10 # Set to 10 for "Test1.mp4", 15 for "Test2.mp4"
+
+If you run this code first with one of the test videos, you may need to delete all image generated before trying another one. 
+
+- Result (Test1.mp4): Excellent performance (see more detail in the code)
+- Result (Test2.mp4): Poor performance (see more detail in the code)
+
 ## Author
 Lo Tsz Yan
 
