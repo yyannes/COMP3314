@@ -17,7 +17,8 @@ Venue: Procedia Computer Science, Volume 132, 2018, Pages 377-384, ISSN 1877-050
 2. Upload the codes to Jupyter Notebook or Google CoLab
 3. Click "Run all cells"
 
-Remark: It is strongly recommended using GPU Farm to reduce the execution time.
+> [!NOTE]
+> Remark: It is strongly recommended using GPU Farm to reduce the execution time.
 
 ## What have been done in the paper
 ### Steps
@@ -46,7 +47,8 @@ Replaced the last three layers with:
 3. A classification output layer
 
 ## My implementation
-Remark: Due to the limited information provided by the paper, the missing hyperparameters are setted based on what is commonly used.
+> [!NOTE]
+> Remark: Due to the limited information provided by the paper, the missing hyperparameters are setted based on what is commonly used.
 
 Learning rate strategy: 
 1. Pre-trained layers: 0.001
@@ -78,7 +80,7 @@ Datasets:
 1. CIFAR-100: 50000 training, 10000 testing
 2. CIFAR-10: 50000 training, 10000 testing
 3. ImageNet: cancelled as downloading of imagenet dataset is not available
-4. Video: 2 sample video (Test1.mp4, Test2.mp4)
+4. Video: 2 sample video (`Test1.mp4`, `Test2.mp4`)
 
 ## Description of each code
 ### 1. GoogLeNet_CIFAR10(changed layer).ipynb
@@ -86,63 +88,69 @@ This code follows the layer replacement strategy mentioned in the paper: replace
 
 It takes the input size of 32x32 to shorten the running time.
 
-- Result: It gives very poor performance, so modification is made on future code implementation.
+> Result: It gives very poor performance, so modification is made on future code implementation.
 
-- Future modification: Only replace the last fully connected layer with a new fully connected layer.
+> Future modification: Only replace the last fully connected layer with a new fully connected layer.
 
 ### 2. GoogLeNet_CIFAR10(227x227).ipynb
 This code follows input size mentioned in the paper: 227 x 227.
 
-- Result: It takes very long time to run.
+> Result: It takes very long time to run.
 
-- Future modification: Take input size of 32x32 for GoogLeNet and ResNet50.
+> Future modification: Take input size of 32x32 for GoogLeNet and ResNet50.
 
 ### 3. GoogLeNet_CIFAR10(32x32).ipynb
 This code takes the input size of 32x32 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Fair performance (see more detail in the code)
+> Result: Fair performance (see more detail in the code)
 
 ### 4. GoogLeNet_CIFAR100.ipynb
 This code takes the input size of 32x32 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Poor performance (see more detail in the code)
+> Result: Poor performance (see more detail in the code)
 
 ### 5. ResNet50_CIFAR10.ipynb
 This code takes the input size of 32x32 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Fair performance (see more detail in the code)
+> Result: Fair performance (see more detail in the code)
 
 ### 6. ResNet50_CIFAR100.ipynb
 This code takes the input size of 32x32 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Poor performance (see more detail in the code)
+> Result: Poor performance (see more detail in the code)
 
 ### 7. AlexNet_CIFAR10.ipynb
 This code takes the input size of 227x227 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Good performance (see more detail in the code)
+> Result: Good performance (see more detail in the code)
 
 ### 8. AlexNet_CIFAR100.ipynb
 This code takes the input size of 227x227 and only replace the last fully connected layer with a new fully connected layer.
 
-- Result: Good performance (see more detail in the code)
+> Result: Good performance (see more detail in the code)
 
 ### 9. AlexNet_Video.ipynb
 This code is same as other code for AlexNet, but used video as testing data. 
 
-There are 2 sample videos for testing: Test1.mp4, Test2.mp4. 
+There are 2 sample videos for testing: `Test1.mp4`, `Test2.mp4`. 
 
-The files, test1.csv and test2.csv, are required to run the test for Test1.mp4 and Test2.mp4 respectively.
+The files, `test1.csv` and `test2.csv`, are required to run the test for `Test1.mp4` and `Test2.mp4` respectively.
 
 Some variables need to be changed depending on which test video you choose.
-- videoFile = "Test1.mp4" # Select video: "Test1.mp4", "Test2.mp4"
-- test = pd.read_csv('test1.csv') # Set 'test1.csv' for "Test1.mp4", 'test2.csv' for "Test2.mp4"
-- num_image = 10 # Set to 10 for "Test1.mp4", 15 for "Test2.mp4"
+```
+videoFile = "Test1.mp4" # Select video: "Test1.mp4", "Test2.mp4"
+...
+test = pd.read_csv('test1.csv') # Set 'test1.csv' for "Test1.mp4", 'test2.csv' for "Test2.mp4"
+...
+num_image = 10 # Set to 10 for "Test1.mp4", 15 for "Test2.mp4"
+```
 
-If you run this code first with one of the test videos, you may need to delete all image generated before trying another one. 
+> [!IMPORTANT]
+> If you run this code first with one of the test videos, you may need to delete all image generated before trying another one to avoid unexpected error.
 
-- Result (Test1.mp4): Excellent performance (see more detail in the code)
-- Result (Test2.mp4): Poor performance (see more detail in the code)
+> Result (Test1.mp4): Excellent performance (see more detail in the code)
+
+> Result (Test2.mp4): Poor performance (see more detail in the code)
 
 ## Author
 Lo Tsz Yan
